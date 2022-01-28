@@ -2,14 +2,11 @@ import dayjs from 'dayjs'
 
 
 class CalanderUtil{
-    private getYear(){
-        return dayjs().year()
-    }
-
+    
     private getDay(){
         return dayjs().day()
     }
-
+    
     
     private getDayOfMonth(year:number,month:number,day:number){
         return dayjs(new Date(year,month,day))
@@ -30,8 +27,17 @@ class CalanderUtil{
         
     }
     
+    public getYear(){
+    return dayjs().year()
+}
     
-    private getMonthMatrix(year:number,month:number){
+    
+    private getCurrentMonthMatrix(){
+        return this.getMonthMatrix(dayjs())
+    }
+    public getMonthMatrix(date:dayjs.Dayjs){
+        const year = date.year()
+        const month= date.month()
         let currentMonthCount = this.getMonthCount(year,month)
         return new Array(5).fill([]).map(()=>{
             return new Array(7).fill(null).map(()=>{
@@ -40,20 +46,21 @@ class CalanderUtil{
             })
         })
     }
-
-    public getCurrentMonthMatrix(){
-        const year = this.getYear()
-        const month = this.getMonth()
-        return this.getMonthMatrix(year,month)
-    }
     
-    public getMonth(){
+    private getMonth(){
         return dayjs().month()
     }
-    
-    public test(){
-        
-        console.table(this.getMonthMatrix(1989,8));
+
+    public getDayObj(){
+        return  dayjs()
     }
+
+    public addMonth(day:dayjs.Dayjs){
+        return day.add(1,'month')
+    }
+    public subMonth(day:dayjs.Dayjs){
+        return day.subtract(1,"month")
+    }
+    
 }
 export  default CalanderUtil

@@ -1,3 +1,3 @@
-export interface DayInterface{
+export interface DateInterface{
     day:any
 }
