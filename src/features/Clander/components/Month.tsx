@@ -21,9 +21,8 @@ export function Month(props:DateInterface){
         {monthMat.map((row,i)=>{return <React.Fragment key={i}>
                 {row.map((day:any,idx:number)=> {
                     return <React.Fragment key={idx}>
-                        <Day dayjs = {day}/>
+                        <Day dayjs = {day} currentMonth={props.currentMonth}/>
                     </React.Fragment>
-
                 } )}
     </React.Fragment>
         

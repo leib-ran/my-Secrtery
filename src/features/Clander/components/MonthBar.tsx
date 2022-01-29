@@ -4,13 +4,16 @@ import React from 'react'
 
 export function MonthBar(props:DateInterface){
     const calanderUtil = new CalanderUtil()
-    return <div className="text-center flex justify-evenly cursor-pointer">
+    return <div className="text-center flex justify-evenly cursor-pointer w-48">
         <div onClick={()=>{
             const newDate = calanderUtil.subMonth(props.dayjs)
             props.setDate?.(newDate)
             
             }}> {'<'} </div>
-        {props.dayjs.format("MMMM")}
+            <div className="w-24">
+                {props.dayjs.format("MMMM")}
+
+            </div>
         <div onClick={()=>{
             const newDate = calanderUtil.addMonth(props.dayjs)
             props.setDate?.(newDate)}}>  {'>'}</div>

@@ -61,6 +61,14 @@ class CalanderUtil{
     public subMonth(day:dayjs.Dayjs){
         return day.subtract(1,"month")
     }
+
+    public getDayColor(month:number,currentMonth?:number){
+            if(month === currentMonth){
+                return "text-blue-500"
+            }
+            return "text-gray-500"
+
+    }
     
 }
 export  default CalanderUtil
