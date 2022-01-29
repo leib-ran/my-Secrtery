@@ -16,7 +16,7 @@ export function Month(props:DateInterface){
     },
     [props.dayjs])
 
-    return <div className="grid grid-cols-7 grid-rows-5 h-2/3 w-48">
+    return <div className="grid grid-cols-7 grid-rows-5 h-2/3 w-56">
 
         {monthMat.map((row,i)=>{return <React.Fragment key={i}>
                 {row.map((day:any,idx:number)=> {

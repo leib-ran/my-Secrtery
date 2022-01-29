@@ -62,12 +62,27 @@ class CalanderUtil{
         return day.subtract(1,"month")
     }
 
-    public getDayColor(month:number,currentMonth?:number){
-            if(month === currentMonth){
-                return "text-blue-500"
-            }
-            return "text-gray-500"
+    public getDayColor(date:dayjs.Dayjs,currentMonth?:number){
+        if(dayjs().isSame(date,'day')){
+            return "bg-blue-500 text-white font-bold"
+        }
 
+        if(date.month() === currentMonth){
+            return "text-blue-500"
+        }
+        return "text-gray-500"
+        
+    }
+    
+    public getDayWeek(){
+        const size = 7
+        const res = []
+        let i = 0
+        while(i < 7){
+            res.push(dayjs().day(i).format("dd"))
+            ++i
+        }
+        return res
     }
     
 }
