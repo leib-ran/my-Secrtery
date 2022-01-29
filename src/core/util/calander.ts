@@ -39,7 +39,7 @@ class CalanderUtil{
         const year = date.year()
         const month= date.month()
         let currentMonthCount = this.getMonthCount(year,month)
-        return new Array(5).fill([]).map(()=>{
+        return new Array(6).fill([]).map(()=>{
             return new Array(7).fill(null).map(()=>{
                 currentMonthCount++ 
                 return this.getDayOfMonth(year,month,currentMonthCount)
