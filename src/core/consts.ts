@@ -1,4 +1,3 @@
-import dayjs from 'dayjs'
 
 export enum schedule{
     pomodoro = 25,
@@ -6,6 +5,7 @@ export enum schedule{
     longBreak = 15,
     midBreak = 60,
     earliestHour = 7,
-    latestHour = 23
+    latestHour = 23,
+    cellHeight = 32
     
 }

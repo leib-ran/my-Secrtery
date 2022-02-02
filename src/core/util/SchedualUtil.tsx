@@ -17,18 +17,24 @@ export class SchedualUtil{
         let end = this.getLatestHour()
         while(!early.isSame(end,"minutes")){
             res.push(early)
-            early = early.add(30,"minutes")
-            console.log(early);
-            
+            early = early.add(30,"minutes")            
         }
         return res
+    }
+    private getNumberRowa(){
+        return this.getSechdualRows().length
     }
 
     public test(){
         return this.getSechdualRows();
     }
 
-    
-
-    
+    public createColumne(){
+        const numberOfRows = this.getNumberRowa()
+        const res = []
+        for (let index = 0; index < numberOfRows; index++) {
+            res.push(<div key={index} className={`w-16 h-${schedule.cellHeight} border border-gray-500`}></div>)
+        }
+        return res
+    }   
 }

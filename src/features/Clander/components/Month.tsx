@@ -4,9 +4,11 @@ import React from "react"
 import { Day } from "./Day"
 import CalanderUtil from "../../../core/util/calander"
 import dayjs from "dayjs"
+
 export function Month(props:DateInterface){
     const calnderUtil = new CalanderUtil()
     const monthMatrice = calnderUtil.getMonthMatrix(props.dayjs)
+    
     const [monthMat ,setMonth]  = useState(monthMatrice)
 
     useEffect(()=>{
